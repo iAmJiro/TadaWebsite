@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 .homemotherdiv {
+  overflow: hidden;
 }
 .firsthomediv {
   overflow-x: hidden;

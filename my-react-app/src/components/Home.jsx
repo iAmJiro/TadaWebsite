@@ -1,8 +1,11 @@
 import React from "react";
+import "tailwindcss";
+import "../App.css";
+<link href="/src/styles.css" rel="stylesheet"></link>;
 
 function Home() {
   return (
-    <>
+    <div className="homemotherdiv">
       {/* Hero Section */}
       <div className="w-screen h-screen overflow-hidden relative before:block before:absolute before:bg-black before:h-full before:w-full before:top-0 before:left-0 before:z-10 before:opacity-30">
         <img
@@ -82,7 +85,7 @@ function Home() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
