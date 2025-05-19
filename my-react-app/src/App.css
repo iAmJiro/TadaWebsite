@@ -1,11 +1,87 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Unica+One&display=swap");
+@font-face {
+  font-family: "YourFont";
+  src: url("./Nofex.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.p {
+  background-color: red;
+}
+.homeProfilePicture {
+  height: 40vh;
+  width: 40vh;
+  object-fit: cover;
+  box-shadow: -20px -20px 1px rgba(173, 216, 230);
+}
 
-.homemotherdiv {
+.firstHomeDiv {
+  grid-area: firstHomeDiv;
+  left: 10em;
+  display: grid;
+  object-fit: cover;
+  height: 50vh;
+  justify-self: end;
+  padding-right: 1em;
+  padding-top: 2em;
+}
+.homeName {
+  grid-area: homeName;
+  font-family: "Nofex", sans-serif;
+  font-size: 2em;
+  color: black;
+  /* box-shadow: 0.001px 5px rgba(173, 216, 230); */
+  z-index: 1;
+  position: relative;
+  top: 1em;
+}
+.homeCaption {
+  grid-area: homeCaption;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.5em;
+  color: black;
+  /* box-shadow: 0.001px 5px rgba(173, 216, 230); */
+  z-index: 1;
+  position: relative;
+  bottom: 1em;
+}
+.homeButton {
+  grid-area: homeButton;
+  height: 2em;
+  width: 2em;
+  position: relative;
+  top: 25%;
+}
+.paintButton {
+  grid-area: paintButton;
+  height: 2em;
+  width: 2em;
+  position: relative;
+  top: 25%;
+}
+.secondHomeDiv {
+  display: grid;
+  grid-area: secondHomeDiv;
+  grid-template-rows: 1fr 0.3fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "homeName homeName homeName homeName homeName homeName homeName"
+    "homeCaption homeCaption homeCaption homeCaption homeCaption homeCaption homeCaption"
+    "homeButton paintButton . . . . .";
+}
+
+.homeMotherDiv1 {
+  display: grid;
+  grid-area: homeMotherDiv1;
+  grid-template-columns: 1fr 0.5fr 0.5fr;
+  grid-template-rows: 0.5fr 1fr 0.5fr;
+  grid-template-areas:
+    ". . ."
+    "firstHomeDiv secondHomeDiv ."
+    ". . .";
+  background-color: whitesmoke;
+  height: 100vh;
+  width: 100vw;
   overflow: hidden;
-}
-.firsthomediv {
-  overflow-x: hidden;
-}
-.Hometext {
-  font-size: 10em;
 }
