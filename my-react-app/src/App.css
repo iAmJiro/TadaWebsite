@@ -6,6 +6,12 @@
   font-weight: normal;
   font-style: normal;
 }
+body,
+html {
+  height: 100vh;
+  overflow: hidden;
+}
+
 .p {
   background-color: red;
 }
@@ -34,7 +40,7 @@
   /* box-shadow: 0.001px 5px rgba(173, 216, 230); */
   z-index: 1;
   position: relative;
-  top: 1em;
+  top: 0.75em;
 }
 .homeCaption {
   grid-area: homeCaption;
@@ -48,27 +54,73 @@
 }
 .homeButton {
   grid-area: homeButton;
-  height: 2em;
-  width: 2em;
-  position: relative;
-  top: 25%;
 }
 .paintButton {
   grid-area: paintButton;
+}
+.cvButton {
+  grid-area: cvButton;
+}
+.instagramButton {
+  grid-area: instagramButton;
+}
+.linkedinButton {
+  grid-area: linkedinButton;
+}
+.homeButton,
+.paintButton,
+.cvButton,
+.instagramButton,
+.linkedinButton {
   height: 2em;
   width: 2em;
   position: relative;
   top: 25%;
+  box-shadow: -5px -5px 1px rgba(173, 216, 230);
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+}
+.homeButton:hover,
+.paintButton:hover,
+.cvButton:hover,
+.instagramButton:hover,
+.linkedinButton:hover {
+  transform: scale(0.95);
+  transition: transform 0.2s ease;
+}
+.custom-hover-button {
+  transition: transform 0.2s ease;
+}
+
+.custom-hover-button:hover {
+  transform: scale(0.95);
+}
+
+.homeBreakLine {
+  grid-area: homeBreakLine;
+  box-shadow: -5px -5px 1px rgba(173, 216, 230);
+  height: 0.2em;
+}
+.homeCaptionParagraph {
+  grid-area: homeCaptionParagraph;
+  position: relative;
+  bottom: 4em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 12px;
+  padding-right: 8em;
 }
 .secondHomeDiv {
   display: grid;
+  padding-left: 1em;
   grid-area: secondHomeDiv;
-  grid-template-rows: 1fr 0.3fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 0.3fr 0.5fr 1fr 1fr;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr;
   grid-template-areas:
     "homeName homeName homeName homeName homeName homeName homeName"
     "homeCaption homeCaption homeCaption homeCaption homeCaption homeCaption homeCaption"
-    "homeButton paintButton . . . . .";
+    "homeButton paintButton cvButton instagramButton linkedinButton . ."
+    "homeBreakLine homeBreakLine homeBreakLine homeBreakLine homeBreakLine homeBreakLine homeBreakLine"
+    "homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph";
 }
 
 .homeMotherDiv1 {
@@ -82,6 +134,12 @@
     ". . .";
   background-color: whitesmoke;
   height: 100vh;
+  width: 100vw;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.homeMotherDiv2 {
+  display: grid;
   width: 100vw;
   overflow: hidden;
 }
