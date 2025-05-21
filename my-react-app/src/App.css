@@ -13,7 +13,7 @@ html {
   position: fixed; /* Prevents page movement */
   max-width: 100%;
   overflow-x: hidden;
-  background-color: whitesmoke;
+  background-color: snow;
 }
 
 .p {
@@ -33,12 +33,13 @@ html {
   object-fit: cover;
   height: 50vh;
   justify-self: end;
-  padding-right: 1em;
+  padding-right: 2%;
   padding-top: 2em;
 }
 .homeName {
   grid-area: homeName;
-  font-family: "Nofex", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
   font-size: 2em;
   color: black;
   /* box-shadow: 0.001px 5px rgba(173, 216, 230); */
@@ -48,7 +49,7 @@ html {
 }
 .homeCaption {
   grid-area: homeCaption;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.5em;
   color: black;
   /* box-shadow: 0.001px 5px rgba(173, 216, 230); */
@@ -71,9 +72,17 @@ html {
 .linkedinButton {
   grid-area: linkedinButton;
 }
+.cvButton {
+  height: 2em;
+  width: 2em;
+  position: relative;
+  top: 25%;
+  box-shadow: -5px -5px 1px rgba(173, 216, 230);
+  padding-left: 0.1em;
+  padding-right: 0.1em;
+}
 .homeButton,
 .paintButton,
-.cvButton,
 .instagramButton,
 .linkedinButton {
   height: 2em;
@@ -99,17 +108,37 @@ html {
 .custom-hover-button:hover {
   transform: scale(0.95);
 }
-
+.homeBreakLineForCaption {
+  grid-area: homeBreakLineForCaption;
+  height: 0.2em;
+  position: relative;
+  background-color: rgba(173, 216, 230);
+  height: 0.6em;
+  bottom: 2.5em;
+  width: 40%;
+}
+.homeBreakLineForName {
+  grid-area: homeBreakLineForName;
+  height: 0.2em;
+  position: relative;
+  background-color: rgba(173, 216, 230);
+  height: 0.6em;
+  bottom: 2.5em;
+  width: 50%;
+}
 .homeBreakLine {
   grid-area: homeBreakLine;
   box-shadow: -5px -5px 1px rgba(173, 216, 230);
   height: 0.2em;
+  position: relative;
+  top: 1em;
+  width: 70%;
 }
 .homeCaptionParagraph {
   grid-area: homeCaptionParagraph;
   position: relative;
   bottom: 4em;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   padding-right: 8em;
 }
@@ -117,11 +146,13 @@ html {
   display: grid;
   padding-left: 1em;
   grid-area: secondHomeDiv;
-  grid-template-rows: 1fr 0.3fr 0.5fr 1fr 1fr;
+  grid-template-rows: 1fr 0.1fr 0.3fr 0.1fr 0.5fr 1fr 1fr;
   grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr;
   grid-template-areas:
     "homeName homeName homeName homeName homeName homeName homeName"
+    "homeBreakLineForName homeBreakLineForName homeBreakLineForName homeBreakLineForName homeBreakLineForName homeBreakLineForName homeBreakLineForName"
     "homeCaption homeCaption homeCaption homeCaption homeCaption homeCaption homeCaption"
+    "homeBreakLineForCaption homeBreakLineForCaption homeBreakLineForCaption homeBreakLineForCaption homeBreakLineForCaption homeBreakLineForCaption homeBreakLineForCaption"
     "homeButton paintButton cvButton instagramButton linkedinButton . ."
     "homeBreakLine homeBreakLine homeBreakLine homeBreakLine homeBreakLine homeBreakLine homeBreakLine"
     "homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph";
@@ -152,10 +183,18 @@ html {
   position: relative;
   bottom: 2em;
 }
+.captionRight {
+  grid-area: captionRight;
+}
+.captionText {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 12px;
+}
+
 .homeMotherDiv2 {
   display: grid;
-  grid-template-columns: 1fr 0.3fr;
-  grid-template-areas: "videoLeft .";
+  grid-template-columns: 0.7fr 1fr 0.3fr 0.7fr;
+  grid-template-areas: ". videoLeft captionRight .";
   overflow: hidden;
   padding-left: 8em;
   padding-right: 8em;

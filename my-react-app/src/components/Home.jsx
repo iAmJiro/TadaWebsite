@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 function Home() {
   const [animationDone, setAnimationDone] = useState(false);
   const [showPlaceholder, setShowPlaceholder] = useState(false);
+  const [showCVPlaceholder, setShowCVPlaceholder] = useState(false);
+
   const [homePosition, setHomePosition] = useState(7); // Default position
 
   useEffect(() => {
@@ -17,12 +19,26 @@ function Home() {
   }, [animationDone]);
 
   const handleScrollToPaint = () => {
-    setShowPlaceholder(true); // Show Paint section
-    setHomePosition(4); // Move Home section UP
+    setShowCVPlaceholder(false); // Hide CV section first
+    setTimeout(() => {
+      setShowPlaceholder(true); // Show Paint section
+      setHomePosition(4); // Move Home section UP
+    }, 400); // Smooth transition timing
   };
 
+  // 🔹 New function: behaves like Paint button but for CV section
+  const handleShowCVPlaceholder = () => {
+    setShowPlaceholder(false); // Hide Paint section first
+    setTimeout(() => {
+      setShowCVPlaceholder(true); // Show CV section
+      setHomePosition(4); // Move Home section UP
+    }, 400); // Smooth transition timing
+  };
+
+  // 🔹 Updated Home function to reset BOTH placeholders
   const handleShowHomeOnly = () => {
     setShowPlaceholder(false); // Hide Paint section
+    setShowCVPlaceholder(false); // Hide CV section
     setHomePosition(7); // Move Home section BACK to original position
   };
 
@@ -68,6 +84,14 @@ function Home() {
           >
             Liam Chan
           </motion.h1>
+          <motion.h1
+            className="homeBreakLineForName"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.8, duration: 0.6 }}
+          >
+            <div></div>
+          </motion.h1>
 
           <motion.h1
             className="homeCaption"
@@ -76,6 +100,14 @@ function Home() {
             transition={{ delay: 1.0, duration: 0.6 }}
           >
             Creative
+          </motion.h1>
+          <motion.h1
+            className="homeBreakLineForCaption"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.8, duration: 0.6 }}
+          >
+            <div></div>
           </motion.h1>
 
           {/* Buttons */}
@@ -90,7 +122,11 @@ function Home() {
               img: "paintlogo.png",
               action: handleScrollToPaint,
             },
-            { className: "cvButton", img: "paintlogo.png" },
+            {
+              className: "cvButton",
+              img: "cv.png",
+              action: handleShowCVPlaceholder,
+            },
             {
               className: "instagramButton",
               img: "instagram.png",
@@ -164,7 +200,28 @@ function Home() {
             className="rounded shadow-lg"
           />
         </motion.div>
+        <motion.div
+          className="captionRight"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: showPlaceholder ? 1 : 0 }} // Fade in/out animation
+          transition={{ duration: 0.5, ease: "easeOut" }} // Smooth transition
+          style={{ marginTop: "2em" }}
+        >
+          <h1 className="captionText">
+            Videos commissioned from multiple creatives; show casing multiple
+            skills I learned
+          </h1>
+        </motion.div>
       </div>
+      <motion.div
+        className="cvPlaceholder"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: showCVPlaceholder ? 1 : 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }} // Smooth transition
+        style={{ marginTop: "2em" }}
+      >
+        <h2>CV Section Coming Soon...</h2>
+      </motion.div>
     </div>
   );
 }
