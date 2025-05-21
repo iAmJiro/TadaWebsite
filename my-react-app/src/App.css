@@ -9,7 +9,11 @@
 body,
 html {
   height: 100vh;
-  overflow: hidden;
+  overflow: hidden; /* Prevents scrolling */
+  position: fixed; /* Prevents page movement */
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: whitesmoke;
 }
 
 .p {
@@ -132,14 +136,30 @@ html {
     ". . ."
     "firstHomeDiv secondHomeDiv ."
     ". . .";
-  background-color: whitesmoke;
-  height: 100vh;
+  height: 70vh;
   width: 100vw;
   overflow-y: hidden;
   overflow-x: hidden;
+  position: relative; /* Ensure parent is positioned */
+  z-index: 1;
+  top: 7em;
+}
+.videoLeft {
+  grid-area: videoLeft;
+  display: flex;
+  justify-self: center;
+  z-index: 100;
+  position: relative;
+  bottom: 2em;
 }
 .homeMotherDiv2 {
   display: grid;
-  width: 100vw;
+  grid-template-columns: 1fr 0.3fr;
+  grid-template-areas: "videoLeft .";
+  overflow: hidden;
+  padding-left: 8em;
+  padding-right: 8em;
+}
+.theMotherLand {
   overflow: hidden;
 }
