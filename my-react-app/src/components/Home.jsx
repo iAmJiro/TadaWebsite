@@ -18,14 +18,14 @@ function Home() {
     };
   }, [animationDone]);
 
-  const handleShowCVPlaceholder = () => {
-    setShowPlaceholder(false);
-    setTimeout(() => {
-      setShowCVPlaceholder(true);
-      setHomePosition(4);
-      setContainerHeight("250vh"); // 🔹 Increase height when CV is shown
-    }, 400);
-  };
+  // const handleShowCVPlaceholder = () => {
+  //   setShowPlaceholder(false);
+  //   setTimeout(() => {
+  //     setShowCVPlaceholder(true);
+  //     setHomePosition(4);
+  //     setContainerHeight("250vh"); // 🔹 Increase height when CV is shown
+  //   }, 400);
+  // };
 
   const handleShowHomeOnly = () => {
     setShowPlaceholder(false);
@@ -111,6 +111,14 @@ function Home() {
           >
             <div></div>
           </motion.h1>
+          <div className="navigationBar">
+            <div className="navigationLeftSide">
+              <img src="../img/Search.png" alt="" className="searchIcon" />
+            </div>
+            <div className="navigationRightSide">
+              <h1 className="navigationText">Navigation</h1>
+            </div>
+          </div>
 
           {/* Buttons */}
           {[
@@ -127,17 +135,17 @@ function Home() {
             {
               className: "cvButton",
               img: "cv.png",
-              action: handleShowCVPlaceholder,
+              // action: handleShowCVPlaceholder,
               link: "../img/DESIGN_CV_LIAMCHAN.pdf",
             },
             {
               className: "instagramButton",
-              img: "instagram.png",
+              img: "instagramfromfigma.png",
               link: "https://www.instagram.com/louisthugs/?hl=en",
             },
             {
               className: "linkedinButton",
-              img: "linkedin.png",
+              img: "testlinkedin.png",
               link: "https://www.linkedin.com/in/liam-chan-26b3b825b/",
             },
           ].map(({ className, img, link, action }, i) => {
@@ -182,6 +190,14 @@ function Home() {
             Hey, I am Liam, a freelance videographer and editor with software
             knowledge of Adobe products.
           </motion.h1>
+          <motion.h1
+            className="homeCaptionParagraph2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2.0, duration: 0.6 }}
+          >
+            Contact me at
+          </motion.h1>
         </motion.div>
       </motion.div>
 
@@ -220,12 +236,12 @@ function Home() {
         className="videoLeft"
         id="cv"
         initial={{ opacity: 0 }}
-        animate={{ opacity: showCVPlaceholder ? 1 : 0 }}
+        // animate={{ opacity: showCVPlaceholder ? 1 : 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }} // Smooth transition
         style={{ marginTop: "2em" }}
       >
         {/* <a href="yourfile.pdf" download="../DESIGN_CV_LIAMCHAN.pdf"></a> */}
-        <img src="../img/DESIGN_CV_LIAMCHAN.jpg" className="cvContent" />
+        <h1>Did you see the CV?</h1>
       </motion.div>
     </div>
   );

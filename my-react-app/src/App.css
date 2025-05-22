@@ -13,7 +13,7 @@ html {
   position: fixed; /* Prevents page movement */
   max-width: 100%;
   overflow-x: hidden;
-  background-color: snow;
+  background-color: rgba(218, 228, 230);
 }
 
 .p {
@@ -23,7 +23,8 @@ html {
   height: 40vh;
   width: 40vh;
   object-fit: cover;
-  box-shadow: -20px -20px 1px rgba(173, 216, 230);
+  /* box-shadow: -20px -20px 1px rgba(173, 216, 230); */
+  box-shadow: -20px -20px 0.1px rgba(0, 172, 207);
 }
 
 .firstHomeDiv {
@@ -57,6 +58,33 @@ html {
   position: relative;
   bottom: 1em;
 }
+.searchIcon {
+  height: 1em;
+  padding-left: 0.3em;
+  padding-top: 0.3em;
+}
+.navigationLeftSide {
+  grid-area: navigationLeftSide;
+  outline: 1px solid black;
+}
+.navigationText {
+  grid-area: navigationText;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  text-align: left;
+  padding-left: 1em;
+  padding-top: 0.5em;
+}
+.navigationRightSide {
+  grid-area: navigationRightSide;
+  outline: 1px solid black;
+}
+.navigationBar {
+  grid-area: navigationBar;
+  display: grid;
+  grid-template-areas: "navigationLeftSide navigationRightSide .";
+  grid-template-columns: 0.3fr 1fr 0.7fr;
+}
 .homeButton {
   grid-area: homeButton;
 }
@@ -77,19 +105,27 @@ html {
   width: 2em;
   position: relative;
   top: 25%;
-  box-shadow: -5px -5px 1px rgba(173, 216, 230);
+  box-shadow: -5px -5px 1px rgba(0, 172, 207);
   padding-left: 0.1em;
   padding-right: 0.1em;
 }
+.instagramButton {
+  height: 2em;
+  width: 2em;
+  position: relative;
+  top: 25%;
+  box-shadow: -5px -5px 1px rgba(0, 172, 207);
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+}
 .homeButton,
 .paintButton,
-.instagramButton,
 .linkedinButton {
   height: 2em;
   width: 2em;
   position: relative;
   top: 25%;
-  box-shadow: -5px -5px 1px rgba(173, 216, 230);
+  box-shadow: -5px -5px 1px rgba(0, 172, 207);
   padding-left: 0.2em;
   padding-right: 0.2em;
 }
@@ -112,7 +148,7 @@ html {
   grid-area: homeBreakLineForCaption;
   height: 0.2em;
   position: relative;
-  background-color: rgba(173, 216, 230);
+  background-color: rgba(0, 172, 207);
   height: 0.6em;
   bottom: 2.5em;
   width: 40%;
@@ -121,15 +157,15 @@ html {
   grid-area: homeBreakLineForName;
   height: 0.2em;
   position: relative;
-  background-color: rgba(173, 216, 230);
+  background-color: rgba(0, 172, 207);
   height: 0.6em;
-  bottom: 2.5em;
+  bottom: 1em;
   width: 50%;
 }
 .homeBreakLine {
   grid-area: homeBreakLine;
-  box-shadow: -5px -5px 1px rgba(173, 216, 230);
-  height: 0.2em;
+  box-shadow: -5px -5px 1px rgba(0, 172, 207);
+  height: 0.1em;
   position: relative;
   top: 1em;
   width: 70%;
@@ -142,20 +178,30 @@ html {
   font-size: 12px;
   padding-right: 8em;
 }
+.homeCaptionParagraph2 {
+  grid-area: homeCaptionParagraph2;
+  position: relative;
+  bottom: 4em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  padding-right: 8em;
+}
 .secondHomeDiv {
   display: grid;
   padding-left: 1em;
   grid-area: secondHomeDiv;
-  grid-template-rows: 1fr 0.1fr 0.3fr 0.1fr 0.5fr 1fr 1fr;
+  grid-template-rows: 1fr 0.1fr 0.3fr 0.1fr 0.1fr 1fr 1fr 1fr;
   grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr;
   grid-template-areas:
     "homeName homeName homeName homeName homeName homeName homeName"
     "homeBreakLineForName homeBreakLineForName homeBreakLineForName homeBreakLineForName homeBreakLineForName homeBreakLineForName homeBreakLineForName"
     "homeCaption homeCaption homeCaption homeCaption homeCaption homeCaption homeCaption"
     "homeBreakLineForCaption homeBreakLineForCaption homeBreakLineForCaption homeBreakLineForCaption homeBreakLineForCaption homeBreakLineForCaption homeBreakLineForCaption"
+    "navigationBar navigationBar navigationBar navigationBar navigationBar navigationBar navigationBar"
     "homeButton paintButton cvButton instagramButton linkedinButton . ."
     "homeBreakLine homeBreakLine homeBreakLine homeBreakLine homeBreakLine homeBreakLine homeBreakLine"
-    "homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph";
+    "homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph"
+    "homeCaptionParagraph2 homeCaptionParagraph2 homeCaptionParagraph2 homeCaptionParagraph2 homeCaptionParagraph2 homeCaptionParagraph2 homeCaptionParagraph2";
 }
 
 .homeMotherDiv1 {
