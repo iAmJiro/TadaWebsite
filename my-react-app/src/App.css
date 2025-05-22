@@ -190,15 +190,28 @@ html {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 12px;
 }
-
+.cvPlaceHolder {
+  grid-area: cvPlaceHolder;
+}
+#cv {
+  position: relative;
+  bottom: 14em;
+}
+.cvContent {
+  height: 70em;
+}
 .homeMotherDiv2 {
   display: grid;
   grid-template-columns: 0.7fr 1fr 0.3fr 0.7fr;
-  grid-template-areas: ". videoLeft captionRight .";
+  grid-template-rows: 0.1fr 0.1fr;
+  grid-template-areas:
+    ". videoLeft captionRight ."
+    ". cvPlaceHolder cvPlaceHolder .";
   overflow: hidden;
   padding-left: 8em;
   padding-right: 8em;
 }
 .theMotherLand {
   overflow: hidden;
+  height: 100vh;
 }

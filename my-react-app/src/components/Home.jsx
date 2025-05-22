@@ -8,7 +8,7 @@ function Home() {
   const [animationDone, setAnimationDone] = useState(false);
   const [showPlaceholder, setShowPlaceholder] = useState(false);
   const [showCVPlaceholder, setShowCVPlaceholder] = useState(false);
-
+  const [containerHeight, setContainerHeight] = useState("100vh");
   const [homePosition, setHomePosition] = useState(7); // Default position
 
   useEffect(() => {
@@ -18,32 +18,34 @@ function Home() {
     };
   }, [animationDone]);
 
-  const handleScrollToPaint = () => {
-    setShowCVPlaceholder(false); // Hide CV section first
-    setTimeout(() => {
-      setShowPlaceholder(true); // Show Paint section
-      setHomePosition(4); // Move Home section UP
-    }, 400); // Smooth transition timing
-  };
-
-  // 🔹 New function: behaves like Paint button but for CV section
   const handleShowCVPlaceholder = () => {
-    setShowPlaceholder(false); // Hide Paint section first
+    setShowPlaceholder(false);
     setTimeout(() => {
-      setShowCVPlaceholder(true); // Show CV section
-      setHomePosition(4); // Move Home section UP
-    }, 400); // Smooth transition timing
+      setShowCVPlaceholder(true);
+      setHomePosition(4);
+      setContainerHeight("250vh"); // 🔹 Increase height when CV is shown
+    }, 400);
   };
 
-  // 🔹 Updated Home function to reset BOTH placeholders
   const handleShowHomeOnly = () => {
-    setShowPlaceholder(false); // Hide Paint section
-    setShowCVPlaceholder(false); // Hide CV section
-    setHomePosition(7); // Move Home section BACK to original position
+    setShowPlaceholder(false);
+    setShowCVPlaceholder(false);
+    setHomePosition(7);
+    setContainerHeight("100vh"); // 🔹 Reset height when Home is shown
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleScrollToPaint = () => {
+    setShowCVPlaceholder(false);
+    setTimeout(() => {
+      setShowPlaceholder(true);
+      setHomePosition(4);
+      setContainerHeight("100vh"); // 🔹 Reset height when Paint is shown
+    }, 400);
   };
 
   return (
-    <div className="theMotherLand">
+    <div className="theMotherLand" style={{ height: containerHeight }}>
       {/* Home Section - Smoothly moves up when Paint is pressed */}
       <motion.div
         className="homeMotherDiv1"
@@ -126,6 +128,7 @@ function Home() {
               className: "cvButton",
               img: "cv.png",
               action: handleShowCVPlaceholder,
+              link: "../img/DESIGN_CV_LIAMCHAN.pdf",
             },
             {
               className: "instagramButton",
@@ -214,13 +217,15 @@ function Home() {
         </motion.div>
       </div>
       <motion.div
-        className="cvPlaceholder"
+        className="videoLeft"
+        id="cv"
         initial={{ opacity: 0 }}
         animate={{ opacity: showCVPlaceholder ? 1 : 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }} // Smooth transition
         style={{ marginTop: "2em" }}
       >
-        <h2>CV Section Coming Soon...</h2>
+        {/* <a href="yourfile.pdf" download="../DESIGN_CV_LIAMCHAN.pdf"></a> */}
+        <img src="../img/DESIGN_CV_LIAMCHAN.jpg" className="cvContent" />
       </motion.div>
     </div>
   );
