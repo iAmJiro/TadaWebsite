@@ -196,7 +196,7 @@ function Home() {
             animate={{ opacity: 1 }}
             transition={{ delay: 2.0, duration: 0.6 }}
           >
-            Contact me at
+            Contact me at Email
           </motion.h1>
         </motion.div>
       </motion.div>
