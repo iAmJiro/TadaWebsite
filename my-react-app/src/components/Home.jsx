@@ -145,7 +145,7 @@ function Home() {
             },
             {
               className: "linkedinButton",
-              img: "testlinkedin.png",
+              img: "linkedin.png",
               link: "https://www.linkedin.com/in/liam-chan-26b3b825b/",
             },
           ].map(({ className, img, link, action }, i) => {
