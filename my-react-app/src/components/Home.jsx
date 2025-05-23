@@ -187,7 +187,7 @@ function Home() {
             animate={{ opacity: 1 }}
             transition={{ delay: 2.0, duration: 0.6 }}
           >
-            Hey, I am Liam, a freelance videographer and editor with software
+            Hey, I am Liam, a freelance video grapher and editor with software
             knowledge of Adobe products.
           </motion.h1>
           <motion.h1
