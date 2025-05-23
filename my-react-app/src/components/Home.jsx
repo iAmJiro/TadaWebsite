@@ -227,7 +227,7 @@ function Home() {
           style={{ marginTop: "2em" }}
         >
           <h1 className="captionText">
-            Videos commissioned from multiple creatives; show casing multiple
+            Videos commissioned from multiple creatives; showcasing multiple
             skills I learned
           </h1>
         </motion.div>
