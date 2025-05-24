@@ -84,6 +84,7 @@ html {
   display: grid;
   grid-template-areas: "navigationLeftSide navigationRightSide .";
   grid-template-columns: 0.3fr 1fr 0.7fr;
+  width: 101.5%;
 }
 .homeButton {
   grid-area: homeButton;
@@ -105,16 +106,17 @@ html {
   width: 2em;
   position: relative;
   top: 25%;
-  box-shadow: -5px -5px 1px rgba(0, 172, 207);
+  /* box-shadow: -5px -5px 1px rgba(0, 172, 207); */
   padding-left: 0.1em;
   padding-right: 0.1em;
 }
+
 .instagramButton {
   height: 2em;
   width: 2em;
   position: relative;
   top: 25%;
-  box-shadow: -5px -5px 1px rgba(0, 172, 207);
+  /* box-shadow: -5px -5px 1px rgba(0, 172, 207); */
   padding-left: 0.3em;
   padding-right: 0.3em;
 }
@@ -125,7 +127,7 @@ html {
   width: 2em;
   position: relative;
   top: 25%;
-  box-shadow: -5px -5px 1px rgba(0, 172, 207);
+  /* box-shadow: -5px -5px 1px rgba(0, 172, 207); */
   padding-left: 0.2em;
   padding-right: 0.2em;
 }
@@ -168,7 +170,7 @@ html {
   height: 0.1em;
   position: relative;
   top: 1em;
-  width: 70%;
+  width: 67.5%;
 }
 .homeCaptionParagraph {
   grid-area: homeCaptionParagraph;
@@ -177,6 +179,7 @@ html {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   padding-right: 8em;
+  width: 93%;
 }
 .homeCaptionParagraph2 {
   grid-area: homeCaptionParagraph2;
@@ -260,4 +263,35 @@ html {
 .theMotherLand {
   overflow: hidden;
   height: 100vh;
+}
+@media screen and (max-width: 768px) {
+  .firstHomeDiv {
+    display: grid;
+    justify-self: center;
+    padding-left: 1em;
+  }
+  .secondHomeDiv {
+    display: grid;
+    padding-left: 1em;
+    grid-area: secondHomeDiv;
+    grid-template-rows: 1fr 0.1fr 0.3fr 0.1fr 0.1fr 1fr 1fr 1fr;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr;
+    grid-template-areas:
+      "homeName homeName homeName homeName homeName homeName homeName"
+      "homeBreakLineForName homeBreakLineForName homeBreakLineForName homeBreakLineForName homeBreakLineForName homeBreakLineForName homeBreakLineForName"
+      "homeCaption homeCaption homeCaption homeCaption homeCaption homeCaption homeCaption"
+      "homeBreakLineForCaption homeBreakLineForCaption homeBreakLineForCaption homeBreakLineForCaption homeBreakLineForCaption homeBreakLineForCaption homeBreakLineForCaption"
+      "navigationBar navigationBar navigationBar navigationBar navigationBar navigationBar navigationBar"
+      "homeButton paintButton cvButton instagramButton linkedinButton . ."
+      "homeBreakLine homeBreakLine homeBreakLine homeBreakLine homeBreakLine homeBreakLine homeBreakLine"
+      "homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph"
+      "homeCaptionParagraph2 homeCaptionParagraph2 homeCaptionParagraph2 homeCaptionParagraph2 homeCaptionParagraph2 homeCaptionParagraph2 homeCaptionParagraph2";
+  }
+  .homeMotherDiv1 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "firstHomeDiv"
+      "secondHomeDiv";
+  }
 }
