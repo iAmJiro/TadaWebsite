@@ -228,7 +228,7 @@ function Home() {
         >
           <h1 className="captionText">
             Videos commissioned from multiple creatives; showcasing multiple
-            skills I learned
+            skill I learned
           </h1>
         </motion.div>
       </div>
