@@ -340,7 +340,7 @@ html {
     height: 2em;
     width: 2em;
     position: relative;
-    top: 25%;
+    top: 1em;
     padding-left: 0.1em;
     padding-right: 0.1em;
   }
@@ -349,7 +349,7 @@ html {
     height: 2em;
     width: 2em;
     position: relative;
-    top: 25%;
+    top: 1em;
     padding-left: 0.3em;
     padding-right: 0.3em;
   }
@@ -359,7 +359,7 @@ html {
     height: 2em;
     width: 2em;
     position: relative;
-    top: 25%;
+    top: 1em;
     padding-left: 0.2em;
     padding-right: 0.2em;
   }
@@ -489,7 +489,7 @@ html {
     grid-area: secondHomeDiv;
     padding-left: 0.3em;
     padding-right: 0.3em;
-    grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
+    grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
     grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
     grid-template-areas:
       ". homeName homeName homeName homeName homeName ."
@@ -498,9 +498,7 @@ html {
       ". homeBreakLineForCaption homeBreakLineForCaption homeBreakLineForCaption homeBreakLineForCaption homeBreakLineForCaption ."
       ". navigationBar navigationBar navigationBar navigationBar navigationBar ."
       ". homeButton paintButton cvButton instagramButton linkedinButton ."
-      ". homeBreakLine homeBreakLine homeBreakLine homeBreakLine homeBreakLine ."
-      ". homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph ."
-      ". homeCaptionParagraph2 homeCaptionParagraph2 homeCaptionParagraph2 homeCaptionParagraph2 homeCaptionParagraph2 .";
+      ". homeBreakLine homeBreakLine homeBreakLine homeBreakLine homeBreakLine .";
   }
   .homeMotherDiv1 {
     height: 100vh;

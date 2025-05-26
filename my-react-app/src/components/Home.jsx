@@ -173,7 +173,7 @@ function Home() {
 
           {/* Description */}
           <motion.h1
-            className="homeBreakLine"
+            className="homeBreakLine hidden md:block"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.8, duration: 0.6 }}
@@ -182,16 +182,17 @@ function Home() {
           </motion.h1>
 
           <motion.h1
-            className="homeCaptionParagraph"
+            className="homeCaptionParagraph hidden md:block"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2.0, duration: 0.6 }}
           >
-            Hey, I am Liam, a freelance video grapher and editor with software
+            Hey, I am Liam, a freelance videographer and editor with software
             knowledge of Adobe products.
           </motion.h1>
+
           <motion.h1
-            className="homeCaptionParagraph2"
+            className="homeCaptionParagraph2 hidden md:block"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2.0, duration: 0.6 }}
