@@ -341,7 +341,6 @@ html {
     width: 2em;
     position: relative;
     top: 25%;
-    /* box-shadow: -5px -5px 1px rgba(0, 172, 207); */
     padding-left: 0.1em;
     padding-right: 0.1em;
   }
@@ -351,7 +350,6 @@ html {
     width: 2em;
     position: relative;
     top: 25%;
-    /* box-shadow: -5px -5px 1px rgba(0, 172, 207); */
     padding-left: 0.3em;
     padding-right: 0.3em;
   }
@@ -362,7 +360,6 @@ html {
     width: 2em;
     position: relative;
     top: 25%;
-    /* box-shadow: -5px -5px 1px rgba(0, 172, 207); */
     padding-left: 0.2em;
     padding-right: 0.2em;
   }
@@ -413,7 +410,7 @@ html {
     bottom: 4em;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
-    padding-right: 8em;
+    padding-right: 0em;
     width: 93%;
   }
   .homeCaptionParagraph2 {
@@ -422,7 +419,7 @@ html {
     bottom: 4em;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
-    padding-right: 8em;
+    padding-right: 0em;
   }
   .homeName {
     grid-area: homeName;
@@ -492,7 +489,7 @@ html {
     grid-area: secondHomeDiv;
     padding-left: 0.3em;
     padding-right: 0.3em;
-    grid-template-rows: 0.1fr 0.1fr 0.5fr 0.5fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
     grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
     grid-template-areas:
       ". homeName homeName homeName homeName homeName ."
@@ -506,6 +503,7 @@ html {
       ". homeCaptionParagraph2 homeCaptionParagraph2 homeCaptionParagraph2 homeCaptionParagraph2 homeCaptionParagraph2 .";
   }
   .homeMotherDiv1 {
+    height: 100vh;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
@@ -516,14 +514,13 @@ html {
   }
 }
 /* ===============================================LARGE SCREENS============ */
-@media (min-width: 1024px) {
+@media (min-width: 1524px) {
   .homeName {
     grid-area: homeName;
     font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
     font-size: 2.7em;
     color: black;
-    /* box-shadow: 0.001px 5px rgba(173, 216, 230); */
     z-index: 1;
     position: relative;
     top: 0.4em;
@@ -533,10 +530,9 @@ html {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2em;
     color: black;
-    /* box-shadow: 0.001px 5px rgba(173, 216, 230); */
     z-index: 1;
     position: relative;
-    bottom: 1em;
+    bottom: 0.5em;
   }
   .searchIcon {
     height: 1em;
@@ -586,7 +582,6 @@ html {
     width: 2em;
     position: relative;
     top: 25%;
-    /* box-shadow: -5px -5px 1px rgba(0, 172, 207); */
     padding-left: 0.1em;
     padding-right: 0.1em;
   }
@@ -596,7 +591,6 @@ html {
     width: 2em;
     position: relative;
     top: 25%;
-    /* box-shadow: -5px -5px 1px rgba(0, 172, 207); */
     padding-left: 0.3em;
     padding-right: 0.3em;
   }
@@ -607,7 +601,6 @@ html {
     width: 2em;
     position: relative;
     top: 25%;
-    /* box-shadow: -5px -5px 1px rgba(0, 172, 207); */
     padding-left: 0.2em;
     padding-right: 0.2em;
   }
@@ -637,11 +630,10 @@ html {
   }
   .homeBreakLineForName {
     grid-area: homeBreakLineForName;
-    height: 0.2em;
     position: relative;
     background-color: rgba(0, 172, 207);
     height: 0.6em;
-    bottom: 2.8em;
+    bottom: 1.8em;
     width: 50%;
   }
   .homeBreakLine {
@@ -657,7 +649,7 @@ html {
     position: relative;
     bottom: 4em;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     padding-right: 8em;
     width: 93%;
   }
@@ -666,13 +658,14 @@ html {
     position: relative;
     bottom: 4em;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     padding-right: 8em;
   }
   .secondHomeDiv {
     display: grid;
     padding-left: 1em;
     grid-area: secondHomeDiv;
+    height: 46vh;
     grid-template-rows: 1fr 0.1fr 0.3fr 0.1fr 0.1fr 1fr 1fr 1fr;
     grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr;
     grid-template-areas:
@@ -685,5 +678,8 @@ html {
       "homeBreakLine homeBreakLine homeBreakLine homeBreakLine homeBreakLine homeBreakLine homeBreakLine"
       "homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph homeCaptionParagraph"
       "homeCaptionParagraph2 homeCaptionParagraph2 homeCaptionParagraph2 homeCaptionParagraph2 homeCaptionParagraph2 homeCaptionParagraph2 homeCaptionParagraph2";
+  }
+  .homeMotherDiv2 {
+    grid-template-columns: 0.7fr 1fr 0.3fr 1fr;
   }
 }
