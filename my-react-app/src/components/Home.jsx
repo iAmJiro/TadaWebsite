@@ -78,22 +78,14 @@ function Home() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
-          <motion.h1
+          <motion.div
             className="homeName"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.6 }}
           >
             Liam Chan
-          </motion.h1>
-          <motion.h1
-            className="homeBreakLineForName"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.8, duration: 0.6 }}
-          >
-            <div></div>
-          </motion.h1>
+          </motion.div>
 
           <motion.h1
             className="homeCaption"
@@ -103,14 +95,7 @@ function Home() {
           >
             Creative
           </motion.h1>
-          <motion.h1
-            className="homeBreakLineForCaption"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.8, duration: 0.6 }}
-          >
-            <div></div>
-          </motion.h1>
+
           <div className="navigationBar">
             <div className="navigationLeftSide">
               <img src="../img/Search.png" alt="" className="searchIcon" />
