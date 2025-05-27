@@ -10,6 +10,7 @@ function Home() {
   const [showCVPlaceholder, setShowCVPlaceholder] = useState(false);
   const [containerHeight, setContainerHeight] = useState("100vh");
   const [homePosition, setHomePosition] = useState(7); // Default position
+  const [buttonPosition, setButtonPosition] = useState("");
 
   useEffect(() => {
     document.body.style.overflow = animationDone ? "auto" : "hidden";
@@ -26,7 +27,7 @@ function Home() {
   //     setContainerHeight("250vh"); // 🔹 Increase height when CV is shown
   //   }, 400);
   // };
-
+  const handleButtonPosition = () => {};
   const handleShowHomeOnly = () => {
     setShowPlaceholder(false);
     setShowCVPlaceholder(false);
@@ -120,18 +121,20 @@ function Home() {
             {
               className: "cvButton",
               img: "cv.png",
-              // action: handleShowCVPlaceholder,
-              link: "../img/DESIGN_CV_LIAMCHAN.pdf",
+              // link: "../img/DESIGN_CV_LIAMCHAN.pdf",
+              // action: handleButtonPosition,
             },
             {
               className: "instagramButton",
               img: "instagramfromfigma.png",
               link: "https://www.instagram.com/louisthugs/?hl=en",
+              // action: handleButtonPosition,
             },
             {
               className: "linkedinButton",
               img: "linkedin.png",
               link: "https://www.linkedin.com/in/liam-chan-26b3b825b/",
+              // action: handleButtonPosition,
             },
           ].map(({ className, img, link, action }, i) => {
             const button = (
@@ -148,7 +151,13 @@ function Home() {
             );
 
             return link ? (
-              <a key={i} href={link} target="_blank" rel="noopener noreferrer">
+              <a
+                className={className}
+                key={i}
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {button}
               </a>
             ) : (
