@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "tailwindcss";
 import "../App.css";
 import Navbar from "./Navbar";
@@ -19,15 +19,8 @@ function Home() {
     };
   }, [animationDone]);
 
-  // const handleShowCVPlaceholder = () => {
-  //   setShowPlaceholder(false);
-  //   setTimeout(() => {
-  //     setShowCVPlaceholder(true);
-  //     setHomePosition(4);
-  //     setContainerHeight("250vh"); // 🔹 Increase height when CV is shown
-  //   }, 400);
-  // };
   const handleButtonPosition = () => {};
+
   const handleShowHomeOnly = () => {
     setShowPlaceholder(false);
     setShowCVPlaceholder(false);
@@ -38,10 +31,27 @@ function Home() {
 
   const handleScrollToPaint = () => {
     setShowCVPlaceholder(false);
+
+    const isMobile = window.innerWidth <= 768;
+
     setTimeout(() => {
       setShowPlaceholder(true);
       setHomePosition(4);
-      setContainerHeight("100vh"); // 🔹 Reset height when Paint is shown
+
+      if (isMobile) {
+        setContainerHeight("200vh"); // Make sure the container is tall enough
+        const target = document.querySelector(".homeMotherDiv2");
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          window.scrollTo({
+            top: window.innerHeight * 1.3,
+            behavior: "smooth",
+          });
+        }
+      } else {
+        setContainerHeight("100vh");
+      }
     }, 400);
   };
 
@@ -51,7 +61,7 @@ function Home() {
       <motion.div
         className="homeMotherDiv1"
         initial={{ opacity: 0, top: "7em" }}
-        animate={{ opacity: 1, top: `${homePosition}em` }} // Animate position change
+        animate={{ opacity: 1, top: `${homePosition}em` }}
         transition={{ duration: 0.5, ease: "easeOut" }}
         onAnimationComplete={() => setAnimationDone(true)}
       >
@@ -121,20 +131,16 @@ function Home() {
             {
               className: "cvButton",
               img: "cv.png",
-              // link: "../img/DESIGN_CV_LIAMCHAN.pdf",
-              // action: handleButtonPosition,
             },
             {
               className: "instagramButton",
               img: "instagramfromfigma.png",
               link: "https://www.instagram.com/louisthugs/?hl=en",
-              // action: handleButtonPosition,
             },
             {
               className: "linkedinButton",
               img: "linkedin.png",
               link: "https://www.linkedin.com/in/liam-chan-26b3b825b/",
-              // action: handleButtonPosition,
             },
           ].map(({ className, img, link, action }, i) => {
             const button = (
@@ -201,24 +207,25 @@ function Home() {
         <motion.div
           className="videoLeft"
           initial={{ opacity: 0 }}
-          animate={{ opacity: showPlaceholder ? 1 : 0 }} // Fade in/out animation
-          transition={{ duration: 0.5, ease: "easeOut" }} // Smooth transition
+          animate={{ opacity: showPlaceholder ? 1 : 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           style={{ marginTop: "2em" }}
         >
           <motion.img
             src="https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif"
             alt="Placeholder GIF"
             initial={{ opacity: 0 }}
-            animate={{ opacity: showPlaceholder ? 1 : 0 }} // Smooth fade animation
+            animate={{ opacity: showPlaceholder ? 1 : 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="rounded shadow-lg"
           />
         </motion.div>
+
         <motion.div
           className="captionRight"
           initial={{ opacity: 0 }}
-          animate={{ opacity: showPlaceholder ? 1 : 0 }} // Fade in/out animation
-          transition={{ duration: 0.5, ease: "easeOut" }} // Smooth transition
+          animate={{ opacity: showPlaceholder ? 1 : 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           style={{ marginTop: "2em" }}
         >
           <h1 className="captionText">
@@ -227,15 +234,14 @@ function Home() {
           </h1>
         </motion.div>
       </div>
+
       <motion.div
         className="videoLeft"
         id="cv"
         initial={{ opacity: 0 }}
-        // animate={{ opacity: showCVPlaceholder ? 1 : 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }} // Smooth transition
+        transition={{ duration: 0.5, ease: "easeOut" }}
         style={{ marginTop: "2em" }}
       >
-        {/* <a href="yourfile.pdf" download="../DESIGN_CV_LIAMCHAN.pdf"></a> */}
         <h1>Did you see the CV?</h1>
       </motion.div>
     </div>
